@@ -8,9 +8,9 @@
 </head>
 <body> 
     <form action="index.php" method="GET">
-        <span class="text">Введите год </span><input name="a" type="text" value="<?php if (isset($_GET['a'])) echo $_GET['a']; else echo '2022'; ?>"> <br> <br>
+        <span class="text">Введите градусы в Цельсиях </span><input name="a" type="text"> <br> <br>
         <input type="submit" value="Ok">
     </form><br>
-    <?php if ($_GET['a'] % 4 == 0) echo ' Год високосный'; else echo ' Год не високосный';?>
+    <?php  if (!empty($_GET['a'])) {$a = 9*$_GET['a']/5+32; echo 'В фаренгейтах это '.$a;}?>
 </body>
 </html>
