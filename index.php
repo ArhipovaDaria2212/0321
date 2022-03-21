@@ -8,9 +8,14 @@
 </head>
 <body> 
     <form action="index.php" method="GET">
-        <span class="text">Введите градусы в Цельсиях </span><input name="a" type="text"> <br> <br>
+        <span class="text">Введите число </span><input name="a" type="number"> <br> <br>
         <input type="submit" value="Ok">
     </form><br>
-    <?php  if (!empty($_GET['a'])) {$a = 9*$_GET['a']/5+32; echo 'В фаренгейтах это '.$a;}?>
+    <?php  if (!empty($_GET['a'])) { $res = 1;
+        for ($i = 1; $i <= $_GET['a']; $i++) {
+            $res = $res * $i;
+        }
+        echo 'Факториал числа '.$res;
+    }?>
 </body>
 </html>
